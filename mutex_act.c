@@ -6,7 +6,7 @@
 /*   By: mmartine <mmartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 19:50:49 by mmartine          #+#    #+#             */
-/*   Updated: 2024/08/13 18:17:50 by mmartine         ###   ########.fr       */
+/*   Updated: 2024/08/14 17:22:19 by mmartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,14 @@ long long	ft_get_time(void)
 
 void	printf_mutex(t_data *data, char *str)
 {
-	pthread_mutex_lock((data->write_mutex));
-	printf("%lli ms: ", (ft_get_time() - data->initial_time));
-	printf("philo number %i ", data->philo_number);
-	printf("%s.\n", str);
-	pthread_mutex_unlock((data->write_mutex));
+	if (check_status(data, 0))
+	{
+		pthread_mutex_lock((data->write_mutex));
+		printf("%lli ms: ", (ft_get_time() - data->initial_time));
+		printf("philo number %i ", data->philo_number);
+		printf("%s.\n", str);
+		pthread_mutex_unlock((data->write_mutex));
+	}
 	return ;
 }
 

@@ -6,7 +6,7 @@
 /*   By: mmartine <mmartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 16:56:29 by mmartine          #+#    #+#             */
-/*   Updated: 2024/08/13 20:32:23 by mmartine         ###   ########.fr       */
+/*   Updated: 2024/08/14 17:23:04 by mmartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,7 @@ void	check_death(t_data **data, int n, int *status)
 			pthread_mutex_unlock(curr->time_mutex);
 			printf_mutex(curr, "died");
 			check_status(*data, 1);
+			break ;
 		}
 		else
 			pthread_mutex_unlock(curr->time_mutex);
