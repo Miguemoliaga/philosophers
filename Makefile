@@ -6,7 +6,7 @@
 #    By: mmartine <mmartine@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/13 17:34:06 by mmartine          #+#    #+#              #
-#    Updated: 2024/08/13 20:42:44 by mmartine         ###   ########.fr        #
+#    Updated: 2024/08/18 17:42:47 by mmartine         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,12 +14,13 @@ NAME	= philosophers
 
 CC		= gcc
 
-CFLAGS	= -Wall -Werror -Wextra -g3  -fsanitize=thread # -fsanitize=address
+CFLAGS	= -Wall -Werror -Wextra -g3 -fsanitize=address # -fsanitize=thread
 
 SRCS	=	main.c \
 			mutex_act.c \
 			routine.c \
-			utils.c 
+			utils.c \
+			utils_extra.c
 
 
 INCLUDE	= -L${LIBFT} -lft 

@@ -6,7 +6,7 @@
 /*   By: mmartine <mmartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 17:52:45 by mmartine          #+#    #+#             */
-/*   Updated: 2024/08/13 18:14:44 by mmartine         ###   ########.fr       */
+/*   Updated: 2024/08/18 17:40:41 by mmartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,8 @@ int			eatingact(t_data *philo, long long last_meal);
 void		monitor(int	*status, t_data **data, int n);
 void		fill_mutex(t_data *list, int n);
 int			check_status(t_data	*philo, int set);
-void		one_philo_scenario(t_data *philo);
+void		one_philo_scenario(t_data *philo, int *status);
+void		fill_data(t_data *node, int number, char **args, int argc);
+t_data		**create_list(int argc, char **args, t_data **data, int n);
+
 #endif

@@ -6,7 +6,7 @@
 /*   By: mmartine <mmartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 18:22:25 by mmartine          #+#    #+#             */
-/*   Updated: 2024/08/14 17:23:08 by mmartine         ###   ########.fr       */
+/*   Updated: 2024/08/18 17:40:11 by mmartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,9 @@ void	error(int error_n)
 		printf("Error a la hora de alojar memoria\n");
 }
 
-void	one_philo_scenario(t_data *philo)
+void	one_philo_scenario(t_data *philo, int *status)
 {
+	philo->status = status;
 	philo->initial_time = ft_get_time();
 	printf_mutex(philo, "has taken (rigth) fork");
 	smart_sleep(philo->time_to_die);

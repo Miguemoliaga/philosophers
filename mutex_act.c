@@ -6,7 +6,7 @@
 /*   By: mmartine <mmartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 19:50:49 by mmartine          #+#    #+#             */
-/*   Updated: 2024/08/14 17:22:19 by mmartine         ###   ########.fr       */
+/*   Updated: 2024/08/18 17:38:47 by mmartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,22 @@ void	fill_mutex(t_data *curr, int n)
 	pthread_mutex_t	*w_mutex;
 	pthread_mutex_t	*m_mutex;
 	pthread_mutex_t	*s_mutex;
+	int				i;
 
+	i = 0;
 	s_mutex = malloc(sizeof(pthread_mutex_t));
 	pthread_mutex_init(s_mutex, NULL);
 	m_mutex = malloc(sizeof(pthread_mutex_t));
 	pthread_mutex_init(m_mutex, NULL);
 	w_mutex = malloc(sizeof(pthread_mutex_t));
 	pthread_mutex_init(w_mutex, NULL);
-	while (curr->philo_number < n)
+	while (i++ < n)
 	{
 		curr->write_mutex = w_mutex;
 		curr->status_mutex = s_mutex;
 		curr->time_mutex = m_mutex;
 		curr = curr->next;
 	}
-	curr->write_mutex = w_mutex;
-	curr->status_mutex = s_mutex;
-	curr->time_mutex = m_mutex;
 }
 
 void	smart_sleep(long long time)
