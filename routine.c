@@ -6,7 +6,7 @@
 /*   By: mmartine <mmartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 16:56:29 by mmartine          #+#    #+#             */
-/*   Updated: 2024/08/14 17:23:04 by mmartine         ###   ########.fr       */
+/*   Updated: 2024/08/19 17:51:56 by mmartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ void	*routine(void *arg)
 		printf_mutex(philo, "is sleeping");
 		smart_sleep(philo->time_to_sleep);
 		printf_mutex(philo, "is thinking");
+		smart_sleep((philo->time_to_die - philo->time_to_eat
+				- philo->time_to_sleep));
 	}
 	return (NULL);
 }
