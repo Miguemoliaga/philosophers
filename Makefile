@@ -6,7 +6,7 @@
 #    By: mmartine <mmartine@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/13 17:34:06 by mmartine          #+#    #+#              #
-#    Updated: 2024/08/18 17:42:47 by mmartine         ###   ########.fr        #
+#    Updated: 2024/08/19 18:00:01 by mmartine         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	= philosophers
 
 CC		= gcc
 
-CFLAGS	= -Wall -Werror -Wextra -g3 -fsanitize=address # -fsanitize=thread
+CFLAGS	= -Wall -Werror -Wextra -g3  -fsanitize=thread #-fsanitize=address
 
 SRCS	=	main.c \
 			mutex_act.c \
